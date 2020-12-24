@@ -51,4 +51,15 @@ class SelectController extends GetxController {
   final checkBoxValue45 = false.obs ;
   final checkBoxValue46 = false.obs ;
 
+List<int> intList =[];
+
+  List check(){
+    for (var i = 0 ; i <  47 ; i++ ){
+      if(checkBoxValue + i ==true){
+        intList.add(i);
+      }
+    }
+    return intList ;
+  }
+
 }
