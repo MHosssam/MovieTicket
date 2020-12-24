@@ -1,5 +1,4 @@
 # movie_ticket
-book ticket 
 ## Screens
 
 |Screen 1| Screen 2| Screen 3|Screen 3|
