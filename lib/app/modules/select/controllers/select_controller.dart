@@ -51,15 +51,108 @@ class SelectController extends GetxController {
   final checkBoxValue45 = false.obs ;
   final checkBoxValue46 = false.obs ;
 
-List<int> intList =[];
+List intList =[];
+
+final i = 0.obs;
 
   List check(){
-    for (var i = 0 ; i <  47 ; i++ ){
-      if(checkBoxValue + i ==true){
-        intList.add(i);
+    
+      if(checkBoxValue.value  ==true){
+        intList.add(i.value+1);
+      } else if(checkBoxValue1.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue2.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue3.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue4.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue5.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue6.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue7.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue8.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue9.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue10.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue11.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue12.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue13.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue14.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue15.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue16.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue17.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue18.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue19.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue20.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue21.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue22.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue23.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue24.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue25.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue26.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue27.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue28.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue29.value ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue30.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue31.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue32.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue33.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue34.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue35.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue36.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue37.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue38.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue39.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue40.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue41.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue42.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue43.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue44.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue45.value  ==true){
+        intList.add(i.value+1);
+      }else if(checkBoxValue46.value  ==true){
+        intList.add(i.value+1);
       }
-    }
-    return intList ;
+      return intList ;
   }
 
 }

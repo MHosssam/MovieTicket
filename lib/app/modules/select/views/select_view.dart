@@ -484,8 +484,8 @@ class SelectView extends GetView<SelectController> {
                       content: Column(
                         children: [
                           Text('سعر التذكره الواحده 80 جنيه' ,style: TextStyle(fontSize: 20),),
-                          Text('لقد اخترت'+'${controller.check().length}'+'مقعد',style: TextStyle(fontSize: 20),),
-                          Text('اجمالي الملبغ'+'${controller.check().length * 80}'+'جنيه',style: TextStyle(fontSize: 20),),
+                          Obx(()=> Text('لقد اخترت'+'${controller.check().length}'+'مقعد',style: TextStyle(fontSize: 20),)),
+                          Obx(()=> Text('اجمالي الملبغ'+'${(controller.check().length-1) * 80}'+'جنيه',style: TextStyle(fontSize: 20),)),
                         ],
                       ),
                       confirm: FlatButton(
