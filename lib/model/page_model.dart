@@ -1,19 +1,13 @@
-import 'package:flutter/material.dart';
-
-
+import 'package:flutter/cupertino.dart';
 
 class PageModel {
-  String _title;
-  String _image;
-  String _cover;
+  final int id;
+  final String title;
+  final String image;
 
-  PageModel(this._title, this._image, this._cover);
-
-
-
-  String get cover => _cover;
-
-  String get image => _image;
-
-  String get title => _title;
+  PageModel({
+    @required this.title,
+    @required this.image,
+    @required this.id,
+  });
 }

@@ -7,8 +7,9 @@ class SplashView extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SplashBody(),
+      body: SplashBody(
+        controller: controller,
+      ),
     );
   }
 }
-  

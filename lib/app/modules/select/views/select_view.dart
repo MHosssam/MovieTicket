@@ -2,22 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_ticket/app/modules/select/controllers/select_controller.dart';
 
-
-
 class SelectView extends GetView<SelectController> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Color(0xfffcf8f3),
+      appBar: AppBar(
+        title: Text(
+          '${controller.model.where((element) => element.id == controller.id).map((e) => e.title).single}',
+        ),
+        centerTitle: true,
+        leading: InkWell(
+          onTap: () => Get.back(),
+          child: Icon(
+            Icons.arrow_back_ios,
+          ),
+        ),
+      ),
       body: Scrollbar(
         child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 8.0),
                 child: Image.asset(
                   'assets/images/television.png',
                   fit: BoxFit.cover,
@@ -477,48 +485,95 @@ class SelectView extends GetView<SelectController> {
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: FlatButton(
-                  onPressed: () {
+                child: InkWell(
+                  onTap: () {
                     Get.defaultDialog(
                       title: "تاكيد الحجز",
                       content: Column(
                         children: [
-                          Text('سعر التذكره الواحده 80 جنيه' ,style: TextStyle(fontSize: 20),),
-                          Obx(()=> Text('لقد اخترت'+'${controller.check().length}'+'مقعد',style: TextStyle(fontSize: 20),)),
-                          Obx(()=> Text('اجمالي الملبغ'+'${(controller.check().length-1) * 80}'+'جنيه',style: TextStyle(fontSize: 20),)),
+                          Text(
+                            'سعر التذكره الواحده 80 جنيه',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Obx(
+                            () => Text(
+                              'لقد اخترت' +
+                                  '${controller.check().length}' +
+                                  'مقعد',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
+                          Obx(
+                            () => Text(
+                              'اجمالي الملبغ' +
+                                  '${(controller.check().length) * 80}' +
+                                  'جنيه',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
+                          const SizedBox(height: 15),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: InkWell(
+                                  onTap: () {
+                                    Get.back();
+                                    Get.snackbar(
+                                      'تم تاكيد الحجز',
+                                      ' ',
+                                      colorText: Colors.white,
+                                    );
+                                  },
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                      color: Colors.amber,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    child: Text('تم'),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Expanded(
+                                child: InkWell(
+                                  onTap: () {
+                                    Get.back();
+                                  },
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    child: Text('الغاء'),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
-                      ),
-                      confirm: FlatButton(
-                        onPressed: () {
-                          Get.back();
-                          Get.snackbar(
-                            'تم تاكيد الحجز',
-                            ' ',
-                            colorText: Colors.white,
-                          );
-                        },
-                        child: Text('تم'),
-                        color: Colors.amber,
-                      ),
-                      cancel: FlatButton(
-                        onPressed: () {
-                          Get.back();
-                        },
-                        child: Text('الغاء'),
-                        color: Colors.red,
                       ),
                       barrierDismissible: false,
                     );
                   },
-                  child: Text(
-                    'تاكيد',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
+                  child: Container(
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Text(
+                      'تاكيد',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                      ),
                     ),
                   ),
-                  minWidth: double.infinity,
-                  color: Colors.amber,
                 ),
               ),
             ],

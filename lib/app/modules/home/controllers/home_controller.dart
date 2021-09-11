@@ -1,29 +1,45 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:movie_ticket/model/page_model.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
-
   final dropValue = 'taken'.obs;
   final dropValue1 = '8 am -> 10 am'.obs;
+  final currentMovie = 0.obs;
+  final dateText = Rxn<DateTime>();
+  final pageview = ValueNotifier(0);
 
-  final  dateStart = DateTime.utc(2021, 1, 1).obs;
-
-  Future<DateTime> datePicker(DateTime initial) async {
-    final date = await DatePicker.showDatePicker(
-      Get.overlayContext,
-      showTitleActions: true,
-      minTime: DateTime(2021, 1, 1),
-      maxTime: DateTime(2030, 12, 30),
-      onChanged: (date) {
-        print('change $date');
-        return date;
-      },
-      onConfirm: (date) {
-        return date;
-      },
-      currentTime: initial,
-    );
-    return date;
-  }
+  final dateList = <String>[
+    '8 am -> 10 am',
+    '10.3 am -> 12.3 am',
+    '1 pm -> 2 pm',
+    '2.3 pm -> 4.3 pm',
+    '5 pm -> 5.3 pm',
+    '6 pm -> 8 pm',
+    '8.3 pm -> 10.3 pm',
+    '11 pm -> 1 am',
+    '1.3 am -> 3.3 am',
+  ].obs;
+  final model = <PageModel>[
+    PageModel(
+      id: 0,
+      title: 'Fury',
+      image: 'assets/images/fury.jpg',
+    ),
+    PageModel(
+      id: 1,
+      title: 'Fast And furious ',
+      image: 'assets/images/fast.jpg',
+    ),
+    PageModel(
+      id: 2,
+      title: 'Taken',
+      image: 'assets/images/taken.jpg',
+    ),
+    PageModel(
+      id: 3,
+      title: 'Transporter',
+      image: 'assets/images/transporter.jpg',
+    ),
+  ];
 }
